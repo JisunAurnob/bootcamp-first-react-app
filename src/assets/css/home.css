@@ -1,0 +1,15 @@
+.home-header{
+
+    color: aqua;
+    font-size: 2rem;
+
+    background-color: black;
+}
+.student_card{
+    padding: 1rem;
+    background-color: aqua;
+}
+
+.student_card:hover{
+    background-color: rgb(237, 237, 237);
+}
