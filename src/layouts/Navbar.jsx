@@ -8,7 +8,7 @@ var a = 'something';
         <header>
             <nav>
                 <ul>
-                    <li><Link className={window.location.pathname == "/" ? "nav-active" : ""} to={'/'}>
+                    <li className=""><Link className={window.location.pathname == "/" ? "nav-active" : ""} to={'/'}>
                         Home</Link></li>
                     <li><Link className={window.location.pathname == "/about-us" ? "nav-active" : ""} to={'/about-us'}>
                         About Us</Link></li>
