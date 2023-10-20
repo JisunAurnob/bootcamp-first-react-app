@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../layouts/Navbar";
 import '../assets/css/home.css'
 import StudentCard from "../components/StudentCard";
-import Footer from "../layouts/Footer";
 import Layout from "../layouts/Layout";
 
 import DuckImage from "../assets/images/download.png"
@@ -22,12 +20,12 @@ const Home = () => {
         },
         {
             name: "Student 2",
-            id: "16161",
+            id: "6548",
             image: "https://uol-v2-space.sgp1.digitaloceanspaces.com/frontend/images/product_images/medium/34065.jpg"
         },
         {
             name: "Some name",
-            id: "16161",
+            id: "2298",
             image: "https://uol-v2-space.sgp1.digitaloceanspaces.com/frontend/images/product_images/medium/72175.jpg"
         }
     ]
@@ -41,20 +39,38 @@ const Home = () => {
                     <br/>
                 <img src={HandImage} className="w-100 h-auto" />
 
-                <span class="relative flex h-3 w-3">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
                 </span>
                 <br />
                 <h2 style={{ backgroundColor: 'orange', fontSize: '3rem' }}>Another text</h2>
                 <br />
                 <Link to="/about-us">About Us</Link>
                 <br />
-                {student.map((item) => {
+                <div className="grid grid-cols-3">
+
+                {student.map((item, index) => {
                     return (
-                        <StudentCard name={item.name} id={item.id} image={item.image} />
+                        <div key={index} className="col-span-1">
+                            <StudentCard name={item.name} id={item.id} image={item.image} />
+                        </div>
                     )
                 })}
+
+                </div>
+
+                <div className="grid grid-cols-3">
+                    <div className="col-span-2">
+                    <StudentCard name={"Some name"} id={1} image={"https://uol-v2-space.sgp1.digitaloceanspaces.com/frontend/images/product_images/medium/72175.jpg"} />
+                    </div>
+                    <div className="col-span-1">
+                    <StudentCard name={"Some name"} id={1} image={"https://uol-v2-space.sgp1.digitaloceanspaces.com/frontend/images/product_images/medium/72175.jpg"} />
+                    </div>
+                    <div className="col-span-1">
+                    <StudentCard name={"Some name"} id={1} image={"https://uol-v2-space.sgp1.digitaloceanspaces.com/frontend/images/product_images/medium/72175.jpg"} />
+                    </div>
+                </div>
 
             </Layout>
 
