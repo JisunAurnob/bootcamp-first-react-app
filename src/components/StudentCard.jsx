@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SomeComponent from "./SomeComponent";
 
 const StudentCard = (props) =>{
 
@@ -12,6 +13,7 @@ const StudentCard = (props) =>{
             <img src={props.image} width={200} />
         </div>
         </Link>
+        {/* <SomeComponent  /> */}
         </>
     )
 }

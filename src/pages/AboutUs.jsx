@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
+import StudentCard from "../components/StudentCard";
+import SomeComponent from "../components/SomeComponent";
 
 const AboutUs = () =>{
 
@@ -11,7 +13,10 @@ const AboutUs = () =>{
             <br />
             <h2>Another text</h2>
             <Link to={'/'}>Home</Link>
-        </div>
+
+            <SomeComponent />
+
+             </div>
     );
 }
 

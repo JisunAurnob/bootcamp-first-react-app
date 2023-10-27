@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../assets/css/home.css'
 import StudentCard from "../components/StudentCard";
@@ -27,8 +27,17 @@ const Home = () => {
             name: "Some name",
             id: "2298",
             image: "https://uol-v2-space.sgp1.digitaloceanspaces.com/frontend/images/product_images/medium/72175.jpg"
+        },
+        {
+            name: "Some name",
+            id: "2298",
+            image: "https://uol-v2-space.sgp1.digitaloceanspaces.com/frontend/images/product_images/medium/72175.jpg"
         }
     ]
+    useEffect(()=>{
+        document.title = "Some title | Home";
+      }
+      );
     return (
         <>
             <Layout>
@@ -48,11 +57,11 @@ const Home = () => {
                 <br />
                 <Link to="/about-us">About Us</Link>
                 <br />
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-4">
 
                 {student.map((item, index) => {
                     return (
-                        <div key={index} className="col-span-1">
+                        <div key={index} className="col-span-4 md:col-span-2 lg:col-span-1">
                             <StudentCard name={item.name} id={item.id} image={item.image} />
                         </div>
                     )
