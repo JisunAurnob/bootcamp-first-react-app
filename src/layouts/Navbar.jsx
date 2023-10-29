@@ -14,6 +14,8 @@ var a = 'something';
                         About Us</Link></li>
                     <li><Link className={window.location.pathname == "/products" ? "nav-active" : ""} to={'/products'}>
                         Products</Link></li>
+                    <li><Link className={window.location.pathname == "/contact-us" ? "nav-active" : ""} to={'/contact-us'}>
+                    Contact Us</Link></li>
                 </ul>
             </nav>
         </header>

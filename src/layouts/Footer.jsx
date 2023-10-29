@@ -4,8 +4,8 @@ import '../assets/css/navbar.css'
 
 const Footer = () =>{
     return(
-        <footer className="bg-black text-amber-700 h-40 flex justify-center">
-        &copy; 2023 My Homepage. All rights reserved.
+        <footer className="bg-black text-white h-40 flex justify-center items-center">
+        &copy; 2023 Footer. All rights reserved.
     </footer>
     );
 }

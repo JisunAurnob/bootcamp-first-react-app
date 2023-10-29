@@ -8,6 +8,7 @@ import DuckImage from "../assets/images/download.png"
 
 import HandImage from "../assets/images/icons/helping-others.png"
 import TodoCard from "../components/TodoCard";
+import axios from "axios";
 
 const Products = () => {
     let name = "Jisun Aurnob";
@@ -273,19 +274,21 @@ const Products = () => {
 
     useEffect(()=>{
 
-        fetch("https://jsonplaceholder.typicode.com/todos")
+        axios.get("https://jsonplaceholder.typicode.com/todos")
         .then(response => {
-            return response.json()
+            console.log(response);
+            if(response.status==200){
+                setToDo(response.data);
+            }
         })
-        .then(data => {
-            // console.log(data);
-            setToDo(data);
+        .catch(error =>{
+            console.log(error);
         })
 
     },[])
 
 
-    console.log(toDo);
+    // console.log(toDo);
     return (
         <>
             <Layout>
@@ -296,7 +299,7 @@ const Products = () => {
 
                     {toDo && toDo.map((item, key) =>{
                         return (
-                            <TodoCard todo={item} />
+                            <TodoCard key={key} todo={item} />
                         )
                     })}
 
